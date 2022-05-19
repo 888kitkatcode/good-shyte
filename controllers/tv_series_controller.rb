@@ -10,6 +10,26 @@ get '/tv/new' do
     erb :'tv_series/new'
 end
 
+get '/search_results' do
+    search_input = params['search_input']
+
+    movie_info = HTTParty.get("https://www.omdbapi.com/?s=#{search_input}&apikey=#{ENV['OMDB_API_KEY']}")
+
+    erb :'tv_series/search_results', locals: {
+        movie_info: movie_info['Search']
+    }
+end
+
+get '/new/api_image' do
+    movie_title = params["movie_title"]
+    movie_details = HTTParty.get("https://www.omdbapi.com/?t=#{movie_title}&apikey=#{ENV['OMDB_API_KEY']}")
+    selected_image = movie_details["Poster"]    
+    erb :'tv_series/api_image', locals: {
+        movie_title: movie_title,
+        selected_image: selected_image
+    }
+end
+
 post '/recommend_tv_show' do
     name = params['name']
     image_url = params['image_url']

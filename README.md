@@ -1,7 +1,7 @@
 # Good Shyte
 
 ### Link to app:
-
+https://good-shyte.herokuapp.com/
 
 ### MVP: 
 This app will allow people to share recommendations of entertainment that they are enjoying, starting with [tv shows] within their chosen network.
@@ -30,6 +30,7 @@ Starting functionality will include:
     - When someone enters an incorrect login, the page is currently blank. Redirect them to the sign-in page with a note that the login details do not exist and for them to enter the correct details or to sign-up.
 6. Add API so that users can search for tv show.
     - Add access to API when route for adding a tv show/making a recommendation has been accessed.
+    - If the API cannot find that image, keep the user on the new recommendation route and display message that no images can be found.
 
 ### Future features:
 These are ideas for features that I will add in order of priority if I have time / in future.

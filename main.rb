@@ -4,6 +4,10 @@
 require 'sinatra'
 require 'pry'
 require 'bcrypt'
+require 'httparty'
+
+# current date
+require 'date'
 
 # this makes the session hash work
 enable :sessions
@@ -11,7 +15,7 @@ enable :sessions
 # database
 require './db/db'
 
-#models
+# models
 require './models/tv_series'
 require './models/user'
 
@@ -22,5 +26,3 @@ require './controllers/users_controller'
 
 # helpers
 require './helpers/sessions_helper'
-
-require 'date'

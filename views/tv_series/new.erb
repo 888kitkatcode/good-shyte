@@ -1,16 +1,22 @@
 <h1>What should I be watching?</h1>
 <form action="/recommend_tv_show" method="POST">
     <label for="">Name: </label>
-    <input type="text" name="name">
+    <input type="text" name ="name">
 
-    <label for="">Image URL: </label>
+    <label for="">Insert your own image</label>
     <input type="text" name="image_url">
 
     <label for="">Why are you backing it? </label>
     <input type="text" name="description">
 
     <label for="">Where to watch: </label>
-    <input type="text" name="watch_to_watch">
+    <input type="text" name="where_to_watch">
 
     <button>Add recommendation</button>
+</form>
+
+<label for="">Search for an image here</label>
+<form action="/search_results">
+    <input type="text" name ="search_input">
+    <button>Search for an image</button>
 </form>

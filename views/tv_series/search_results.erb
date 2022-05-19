@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search results</title>
+</head>
+<body>
+    <h1>Search results:</h1>
+    <h2>Click on an image to select</h2>
+
+    <% movie_info.each do |movie_hash| %>
+    <li>
+        <a href="/new/api_image?movie_title=<%= movie_hash['Title']%>">
+            <%= movie_hash['Title']%>
+            <img src="<%= movie_hash['Poster']%>" alt="">
+        </a>
+    </li>
+
+    <% end %>
+
+</body>
+</html>
