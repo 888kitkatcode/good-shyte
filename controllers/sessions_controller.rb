@@ -2,6 +2,10 @@ get '/login' do
     erb :'sessions/new'
 end
 
+get '/wrong-login' do
+    erb :'sessions/wronglogin'
+end
+
 post '/sessions' do
     email = params['email']
     password = params['password']
@@ -12,6 +16,8 @@ post '/sessions' do
         session['user_id'] = user['id']
         
         redirect '/'
+    else
+        redirect '/wrong-login'
     end
 end
 

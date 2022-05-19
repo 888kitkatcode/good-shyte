@@ -24,13 +24,19 @@ VALUES
 'Dark, stressful and gripping!', 
 'Netflix'),
 ('Friends', 
-'https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg', 
+'https://images.immediate.co.uk/production/volatile/sites/3/2019/09/GettyImages-143479801-c6eefca.jpg?quality=90&crop=8px,437px,2431px,1619px&resize=980,654', 
 'Funny, light-hearted, background show',
-'Netflix');
+'Netflix'),
+('Sherlock',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdyslxyvpxHRajjqAuZT4BJNkiBU1QiQDLUqv2m9GdpxoCOchBAbv6QM5WfmfyNrXyXXM&usqp=CAU',
+'Mysterious, interesting, funny',
+'Stan');
 
 ALTER TABLE tvseries ADD COLUMN user_id INTEGER;
 
 ALTER TABLE tvseries ADD COLUMN user_name TEXT;
+
+ALTER TABLE tvseries ADD COLUMN date_posted DATE;
 
 -- CREATE TABLE comments (
 --     id SERIAL PRIMARY KEY,

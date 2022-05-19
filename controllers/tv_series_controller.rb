@@ -17,8 +17,9 @@ post '/recommend_tv_show' do
     where_to_watch = params['where_to_watch']
     user_id = current_user['id']
     user_name = current_user['name']
+    date_posted = Date.today.to_s
   
-    recommend_tv_show(name, image_url, description, where_to_watch, user_id, user_name)
+    recommend_tv_show(name, image_url, description, where_to_watch, user_id, user_name, date_posted)
 
     redirect '/'
 end

@@ -12,6 +12,7 @@ Starting functionality will include:
 3. <b>Add recommendations</b>
     - When a recommendation is added, it will appear on the front page (most recent recommendations at the top) with name of the tv show, where you are watching it (e.g Netflix, Disney Plus etc), optional description, image.
     - Users can edit and delete their own recommendations. Users cannot edit or delete recommendations of other users.
+    - Users can add comments.
     - Users can like recommendations.
 
 ## Plan:
@@ -22,13 +23,12 @@ Starting functionality will include:
 2. Limit the ability of other users to edit or delete recommendations made by other users:
     - if statement in index.erb.
 3. When a recommendation is uploaded, the date of upload will be noted.
-4. Have ability to like a recommendation:
+    - Consider playing around with the format that the date appears in.
+4. Have ability to like or comment on a recommendation:
     - JS - Add Event Listener?
 5. If user enters incorrect email or password for login, a message alerting the user that they have entered incorrect details appears.
     - When someone enters an incorrect login, the page is currently blank. Redirect them to the sign-in page with a note that the login details do not exist and for them to enter the correct details or to sign-up.
-
-### API?
-1. Start with being able to search for tv shows?
+6. Add API so that users can search for tv show.
     - Add access to API when route for adding a tv show/making a recommendation has been accessed.
 
 ### Future features:

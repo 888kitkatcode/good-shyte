@@ -2,8 +2,8 @@ def all_tv_series
     run_sql("SELECT * FROM tvseries ORDER BY id DESC") 
 end
 
-def recommend_tv_show(name, image_url, description, where_to_watch, user_id, user_name)
-    run_sql("INSERT INTO tvseries(name, image_url, description, where_to_watch, user_id, user_name) VALUES($1, $2, $3, $4, $5, $6)", [name, image_url, description, where_to_watch, user_id, user_name]) 
+def recommend_tv_show(name, image_url, description, where_to_watch, user_id, user_name, date_posted)
+    run_sql("INSERT INTO tvseries(name, image_url, description, where_to_watch, user_id, user_name, date_posted) VALUES($1, $2, $3, $4, $5, $6, $7)", [name, image_url, description, where_to_watch, user_id, user_name, date_posted]) 
 end
 
 def get_tv_show(id)

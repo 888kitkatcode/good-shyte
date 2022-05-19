@@ -1,7 +1,7 @@
 <h1>This is the good shyteeee</h1>
 
 <% if logged_in? %>
-    <h2>Tell us what you like, <%= current_user['name'] %>!</h2>
+    <h2>What shows are you loving at the moment, <%= current_user['name'] %>!</h2>
 
     <form action="/sessions" method="POST">
         <input type="hidden" name="_method" value="delete">
@@ -13,26 +13,38 @@
 
     <section class="all-tv-recommendations">
         <% tv_series.each do |tv_show| %>
-<%# if TV show userid = currentuser id, refer %>
+
             <article class="tv-item">
+            <%= tv_show['date_posted'] %>
             <h3><%= tv_show['user_name']%> recommends:</h3> 
                 <h2><%= tv_show['name'] %></h2>
-                <a href="/tv_series/<%= tv_show['id'] %>/edit">Edit</a>
+                
+                <% if tv_show['user_id'] == current_user['id'] %>
+                    <a href="/tv_series/<%= tv_show['id'] %>/edit">Edit</a>
 
-                <form class="delete_tv" action="/delete_tv_recc/<%= tv_show['id']%>" method="POST">
-                    <input type="hidden" name="_method" value="delete">
+                    <form class="delete_tv" action="/delete_tv_recc/<%= tv_show['id']%>" method="POST">
+                        <input type="hidden" name="_method" value="delete">
 
-                    <button>Delete</button>
-                </form>
+                        <button>Delete</button>
+                    </form>
 
-                <form action="">
-                    <button>Like</button>
-                </form>
-<%#  else %>
-                <img src="<%= tv_show['image_url'] %>" alt="">
-                <h3>Why should you give a *beep*?</h3>
-                <h5><%= tv_show['description'] %></h5>
-                <h5><%= tv_show['where_to_watch'] %></h5>
+                    <img src="<%= tv_show['image_url'] %>" alt="">
+                    <h3>Why should you give a *beep*?</h3>
+                    <h5><%= tv_show['description'] %></h5>
+                    <h5><%= tv_show['where_to_watch'] %></h5>
+
+                <% else %>
+
+                    <form action="">
+                        <button>Like</button>
+                    </form>
+
+                    <img src="<%= tv_show['image_url'] %>" alt="">
+                    <h3>Why should you give a *beep*?</h3>
+                    <h5><%= tv_show['description'] %></h5>
+                    <h5><%= tv_show['where_to_watch'] %></h5>
+                <% end %>
+
             </article>
         <% end %>
     </section>
@@ -40,6 +52,4 @@
 <% else %>
     <a href="/sign_up">Sign up</a>
     <a href="/login">Login</a>
-    <%# Render all movies BUT not edit, delete. %>
-
 <% end %>
