@@ -52,3 +52,4 @@ These are ideas for features that I will add in order of priority if I have time
 9. Users can view a page containing their own recommendations only (for ease of editing and deleting).
 10. Allow users to like recommendations. 
     - JS - Add Event Listener - when someone hits 'Like' box, their name appears?
+11. Allow users to reply to specific comments.

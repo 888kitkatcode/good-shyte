@@ -49,5 +49,5 @@ CREATE TABLE user_comments (
     tvseries_id INTEGER,
     user_name TEXT,
     comment TEXT,
-    date_commented DATE 
+    date_commented TEXT
 );

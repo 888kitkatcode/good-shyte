@@ -83,8 +83,9 @@ post '/add_comment' do
     tvseries_id = params['tvseries_id']
     user_name = params['user_name']
     user_comment = params['user_comment']
-    date_posted = Date.today.to_s
-  
+    # date_posted = Date.today.to_s
+    date_posted = "#{Time.new.year}-#{Time.new.month}-#{Time.new.day} #{Time.new.hour}:#{Time.new.min} #{Time.new.zone}"
+
     add_comment(user_id, tvseries_id, user_name, user_comment, date_posted)
 
     redirect '/'
