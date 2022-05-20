@@ -1,9 +1,13 @@
 <h1>Edit your tv show recommendation</h1>
+
+<h4><%= name %></h4>
+
 <form action="/update_tv/<%= tv_series['id'] %>" method="POST">
     <input type="hidden" name="_method" value="put">
 
+<%# 
     <label for="">Name: </label>
-    <input type="text" name='name' value="<%= tv_series['name'] %>">
+    <input type="text" name='name' value="<%= tv_series['name'] %>
 
     <label for="">Image URL: </label>
     <input type="text" name='image_url' value="<%= tv_series['image_url'] %>">

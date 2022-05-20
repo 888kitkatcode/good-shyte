@@ -1,8 +1,11 @@
 get '/' do
     tv_show_items = all_tv_series()
+
+    # comment_items = get_comments_for_show(tvseries_id)
   
     erb :'tv_series/index', locals: {
-      tv_series: tv_show_items
+      tv_series: tv_show_items,
+    #   user_comments: comment_items
     }
 end
 
@@ -46,22 +49,23 @@ end
 
 get '/tv_series/:id/edit' do
     id = params['id']
-
     tv_show = get_tv_show(id)
+    name = tv_show['name']
   
     erb :'tv_series/edit', locals: {
-      tv_series: tv_show
+        name: name,
+        tv_series: tv_show
     }
 end
   
 put '/update_tv/:id' do
     id = params['id']
-    name = params['name']
+    # name = params['name']
     image_url = params['image_url']
     description = params['description']
     where_to_watch = params['where_to_watch']
   
-    update_tv_recc(name, image_url, description, where_to_watch, id)
+    update_tv_recc(image_url, description, where_to_watch, id)
   
     redirect '/'
 end

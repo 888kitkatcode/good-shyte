@@ -1,0 +1,60 @@
+body {
+    background: #f8f8ff);
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    background: linear-gradient(50deg, #4E3883, #c9b6f6);
+    color: #FFDDCC;   
+    padding: 15px 25px 25px 20px;
+    margin: -10px -10px 20px -10px;
+    position: fixed;
+    font-weight: bolder;
+    width: 100%;
+}
+
+.home {
+    display: grid;
+}
+
+.homepage-heading {
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+.welcome-message {
+    font-size: 18px;
+}
+
+.recommendation-link-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFDDCC;
+    border-radius: 1000px;
+    margin-top: 30px;
+    margin-right: 30px;
+    position: relative;
+}
+
+.recommendation-link-section:hover {
+    background-color: #c4f5ea;
+}
+
+.recommendation-link {
+    font-size: 20px;
+    color: #6347a4;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.all-tv-recommendations{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    height:1000px;
+    padding:50px 0px 0px 50px;
+    margin-top: 200px;
+}
