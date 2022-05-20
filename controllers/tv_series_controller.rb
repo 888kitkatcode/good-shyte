@@ -77,3 +77,17 @@ delete '/delete_tv_recc/:id' do
     
     redirect '/'
 end
+
+post '/add_comment' do
+    user_id = current_user['id']
+    
+    tvseries_id = tv_show['id']
+    user_name = current_user['name']
+    comment = params['comment']
+    date_posted = Date.today.to_s
+    binding.pry
+  
+    add_comment(user_id, tvseries_id, user_name, comment, date_posted)
+
+    redirect '/'
+end
