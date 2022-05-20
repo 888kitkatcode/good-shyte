@@ -24,7 +24,7 @@ Starting functionality will include:
     - if statement in index.erb.
 3. When a recommendation is uploaded, the date of upload will be noted.
     - Consider playing around with the format that the date appears in.
-4. Have ability to like or comment on a recommendation:
+4. Have ability to comment on a recommendation:
     - JS - Add Event Listener?
 5. If user enters incorrect email or password for login, a message alerting the user that they have entered incorrect details appears.
     - When someone enters an incorrect login, the page is currently blank. Redirect them to the sign-in page with a note that the login details do not exist and for them to enter the correct details or to sign-up.
@@ -35,7 +35,8 @@ Starting functionality will include:
 ### Future features:
 These are ideas for features that I will add in order of priority if I have time / in future.
 1. If a user has edited their recommendation, it will show '(edited)' beside the recommendation.
-    - JS - Add Event Listener - when someone hits 'Like' box, their name appears?
+    - Add a column in database to record whether a post has been edited.
+    - If a user edits their recommendation, send that update to the tv series database and record ('edited') beside the name of the tv series.
 2. Two users will not be able to sign up with the same email.
     - If statement.
 3. Allow users to comment on recommendations.
@@ -43,4 +44,11 @@ These are ideas for features that I will add in order of priority if I have time
     - description when creating a recommendation; and
     - comment when making a comment on a recommendation.
 4. Link to additional APIs and allow recommendations for books, music, apps, products, restaurants.
-5. Allow sorting / filtering of dashboard e.g. sort by most recent/oldest recommendations, sort by users, sort by type of media (e.g. tv shows, books, music etc).
+5. Allow sorting / filtering of dashboard e.g. sort by most recent/oldest recommendations, sort by users, type of media recommendation (e.g. tv shows, books, music etc), most popular content in general, most popular content by type.
+6. Users can only sign up with a real email.
+7. Amend tv series table to include all media and add a column for type (e.g. tv show, book, music).
+    - Users will select the type from a drop-down menu.
+8. Allow users to only add one recommendation per day or per week - TBC. Or one of each type of recommendation per week.
+9. Users can view a page containing their own recommendations only (for ease of editing and deleting).
+10. Allow users to like recommendations. 
+    - JS - Add Event Listener - when someone hits 'Like' box, their name appears?

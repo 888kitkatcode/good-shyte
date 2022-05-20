@@ -2,6 +2,10 @@ body {
     background: #f8f8ff);
 }
 
+.logout {
+    margin-top: 200px;
+}
+
 nav {
     display: grid;
     grid-template-columns: 60% 40%;

@@ -1,11 +1,11 @@
 get '/' do
     tv_show_items = all_tv_series()
+    user_comment_items = user_comments()
 
-    # comment_items = get_comments_for_show(tvseries_id)
-  
     erb :'tv_series/index', locals: {
       tv_series: tv_show_items,
-    #   user_comments: comment_items
+      user_comments: user_comment_items
+   
     }
 end
 
@@ -80,14 +80,12 @@ end
 
 post '/add_comment' do
     user_id = current_user['id']
-    
-    tvseries_id = tv_show['id']
-    user_name = current_user['name']
-    comment = params['comment']
+    tvseries_id = params['tvseries_id']
+    user_name = params['user_name']
+    user_comment = params['user_comment']
     date_posted = Date.today.to_s
-    binding.pry
   
-    add_comment(user_id, tvseries_id, user_name, comment, date_posted)
+    add_comment(user_id, tvseries_id, user_name, user_comment, date_posted)
 
     redirect '/'
 end

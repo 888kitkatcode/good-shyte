@@ -20,19 +20,6 @@ CREATE TABLE users (
     password_digest TEXT
 );
 
--- Users:
--- Name: TestA
--- Email: a
--- pw: 123
-
--- Name: TestB
--- Email: b
--- pw: 123
-
--- Name: TestC
--- Email: c
--- pw: 123
-
 INSERT INTO tvseries (name, image_url, description, where_to_watch, user_id, user_name, date_posted)
 VALUES
 ('Ozark', 
@@ -63,13 +50,4 @@ CREATE TABLE user_comments (
     user_name TEXT,
     comment TEXT,
     date_commented DATE 
-);
-
- -- TestB commenting on TestA recommendation
-INSERT INTO user_comments(user_id, tvseries_id, user_name, comment)
-VALUES
-(2,
-13,
-'TestB',
-'Agree! It is amazing!'
 );

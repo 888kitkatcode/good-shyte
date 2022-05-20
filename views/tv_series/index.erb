@@ -21,7 +21,6 @@
             <button class='logout'>Logout</button>
         </form>
 
-
         <section class="all-tv-recommendations">
             <% tv_series.each do |tv_show| %>
 
@@ -48,11 +47,18 @@
                             <input type="hidden" name="user_id" value="<%= current_user['id'] %>">
                             <input type="hidden" name="tvseries_id" value="<%= tv_show['id'] %>">
                             <input type="hidden" name="user_name" value="<%= current_user['name'] %>">
+                            
                             <p><label for="comments">What do you think?</label></p>
                             <textarea id="user_comment" name="user_comment" rows="3" cols="35">Leave a comment...</textarea>
                             <br>
                             <button>Submit</button>
                         </form>
+
+                        <% user_comments.each do |comments| %>
+                            <% if tv_show['id'] == comments['tvseries_id'] %>
+                                <h5><%= comments['user_name'] %>: <%= comments['comment'] %></h5>
+                            <% end %>
+                        <% end %>
 
                     <% else %>
 
@@ -62,7 +68,16 @@
                         <h3>Where can you watch it?</h3>
                         <h5><%= tv_show['where_to_watch'] %></h5>
 
-                        <%# Insert comment section her as well %>
+                        <form action="/add_comment" method="POST">
+                            <input type="hidden" name="user_id" value="<%= current_user['id'] %>">
+                            <input type="hidden" name="tvseries_id" value="<%= tv_show['id'] %>">
+                            <input type="hidden" name="user_name" value="<%= current_user['name'] %>">
+                            
+                            <p><label for="comments">What do you think?</label></p>
+                            <textarea id="user_comment" name="user_comment" rows="3" cols="35">Leave a comment...</textarea>
+                            <br>
+                            <button>Submit</button>
+                        </form>
 
                     <% end %>
 
