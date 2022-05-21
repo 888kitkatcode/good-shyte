@@ -1,6 +1,6 @@
-get '/login' do
-    erb :'sessions/new'
-end
+# get '/login' do
+#     erb :'sessions/new'
+# end
 
 get '/wrong-login' do
     erb :'sessions/wronglogin'

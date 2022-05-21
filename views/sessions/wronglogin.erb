@@ -1,13 +1,18 @@
-<h1>Uh-oh... you entered the wrong login details. Please try again.</h1>
-<form action="/sessions" method="POST">
-    <label for="">Email: </label>
-    <input type="text" name='email'>
+<body class="login-page">
 
-    <label for="">Password: </label>
-    <input type="password" name='password'>
+    <section class="wrong-login-portal">
+        <h2 class="wrong-login-message">Uh-oh... those login details do not exist. Please try again.</h2>
+        <form action="/sessions" method="POST">
+            <label for="">Email </label><br>
+            <input type="text" class="login-input" name='email' placeholder="Enter your email"><br>
 
-    <button>Login</button>
-</form>
+            <label for="">Password </label><br>
+            <input type="password" class="login-input" name='password' placeholder="Enter your password"><br>
 
-<h1>Otherwise sign up below!</h1>
-<a href="/sign_up">Sign up</a>
+            <button class="login-button-wrong">Login</button>
+        </form>
+
+        <h1 class="sign-up-below">Or sign up below!</h1>
+        <a href="/sign_up" class="wrong-login-sign-up">Sign up</a>
+    </section>
+</body>

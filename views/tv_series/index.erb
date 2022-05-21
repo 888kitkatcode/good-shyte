@@ -24,79 +24,106 @@
         <section class="all-tv-recommendations">
             <% tv_series.each do |tv_show| %>
 
-                <article class="tv-item">
-                <%= tv_show['date_posted'] %>
-                <h3><%= tv_show['user_name']%> recommends:</h3> 
-                <h2><%= tv_show['name'] %></h2>
-                    
-                    <% if tv_show['user_id'] == current_user['id'] %>
-                        <a href="/tv_series/<%= tv_show['id'] %>/edit">Edit</a>
+            <div>
+                <div class="recco-box">
+                    <article class="tv-item">
+                    <%= tv_show['date_posted'] %>
+                    <h3><%= tv_show['user_name']%> recommends:</h3> 
+                    <h2><%= tv_show['name'] %></h2>
+                        
+                        <% if tv_show['user_id'] == current_user['id'] %>
+                            <a href="/tv_series/<%= tv_show['id'] %>/edit">Edit</a>
 
-                        <form class="delete_tv" action="/delete_tv_recc/<%= tv_show['id']%>" method="POST">
-                            <input type="hidden" name="_method" value="delete">
+                            <form class="delete_tv" action="/delete_tv_recc/<%= tv_show['id']%>" method="POST">
+                                <input type="hidden" name="_method" value="delete">
 
-                            <button>Delete</button>
-                        </form>
+                                <button>Delete</button>
+                            </form>
 
-                        <img src="<%= tv_show['image_url'] %>" alt="">
-                        <h3>Why should you give a *beep*?</h3>
-                        <h5><%= tv_show['description'] %></h5>
-                        <h3>Where can you watch it?</h3>
-                        <h5><%= tv_show['where_to_watch'] %></h5>
+                            <img class="img-on-dashboard" src="<%= tv_show['image_url'] %>" alt="">
+                            <h3>Why should you give a *beep*?</h3>
+                            <h5><%= tv_show['description'] %></h5>
+                            <h3>Where can you watch it?</h3>
+                            <h5><%= tv_show['where_to_watch'] %></h5>
 
-                        <form action="/add_comment" method="POST">
-                            <input type="hidden" name="user_id" value="<%= current_user['id'] %>">
-                            <input type="hidden" name="tvseries_id" value="<%= tv_show['id'] %>">
-                            <input type="hidden" name="user_name" value="<%= current_user['name'] %>">
+                            <h3>Ok, let's discuss</h3>
+                            <div class="user-comments">
+                                <% user_comments.each do |comments| %>
+                                    <% if tv_show['id'] == comments['tvseries_id'] %>
+                                        <h5 class="indiv-comment"><%= comments['comment'] %></h5> <h6 class="comment-date"><%= comments['user_name'] %> (<%= comments['date_commented'] %>)</h6>
+                                    <% end %>
+                                <% end %>
+                            </div>
+
+                            <form action="/add_comment" method="POST">
+                                <input type="hidden" name="user_id" value="<%= current_user['id'] %>">
+                                <input type="hidden" name="tvseries_id" value="<%= tv_show['id'] %>">
+                                <input type="hidden" name="user_name" value="<%= current_user['name'] %>">
+                                
+                                <p><label for="comments"></label></p>
+                                <textarea id="user_comment" name="user_comment" placeholder="Leave a comment..."></textarea>
+                                <br>
+                                <button>Submit</button>
+                            </form>
+
+                        <% else %>
+
+                            <img src="<%= tv_show['image_url'] %>" alt="">
+                            <h3>Why should you give a *beep*?</h3>
+                            <h5><%= tv_show['description'] %></h5>
+                            <h3>Where can you watch it?</h3>
+                            <h5><%= tv_show['where_to_watch'] %></h5>
                             
-                            <p><label for="comments">What do you think?</label></p>
-                            <textarea id="user_comment" name="user_comment" rows="3" cols="35">Leave a comment...</textarea>
-                            <br>
-                            <button>Submit</button>
-                        </form>
+                            <h3>Ok, let's discuss</h3>
+                            <div class="user-comments">
+                                <% user_comments.each do |comments| %>
+                                    <% if tv_show['id'] == comments['tvseries_id'] %>
+                                        <h5 class="indiv-comment"><%= comments['comment'] %></h5> <h6 class="comment-date"><%= comments['user_name'] %> (<%= comments['date_commented'] %>)</h6>
+                                    <% end %>
+                                <% end %>
+                            </div>
 
-                        <% user_comments.each do |comments| %>
-                            <% if tv_show['id'] == comments['tvseries_id'] %>
-                                <h5><%= comments['user_name'] %>: <%= comments['comment'] %></h5><h6>(<%= comments['date_commented'] %>)</h6>
-                            <% end %>
+                            <form action="/add_comment" method="POST">
+                                <input type="hidden" name="user_id" value="<%= current_user['id'] %>">
+                                <input type="hidden" name="tvseries_id" value="<%= tv_show['id'] %>">
+                                <input type="hidden" name="user_name" value="<%= current_user['name'] %>">
+                                
+                                <p><label for="comments"></label></p>
+                                <textarea id="user_comment" name="user_comment" placeholder="Leave a comment..."></textarea>
+                                <br>
+                                <button>Submit</button>
+                            </form>
+
                         <% end %>
 
-                    <% else %>
-
-                        <img src="<%= tv_show['image_url'] %>" alt="">
-                        <h3>Why should you give a *beep*?</h3>
-                        <h5><%= tv_show['description'] %></h5>
-                        <h3>Where can you watch it?</h3>
-                        <h5><%= tv_show['where_to_watch'] %></h5>
-
-                        <form action="/add_comment" method="POST">
-                            <input type="hidden" name="user_id" value="<%= current_user['id'] %>">
-                            <input type="hidden" name="tvseries_id" value="<%= tv_show['id'] %>">
-                            <input type="hidden" name="user_name" value="<%= current_user['name'] %>">
-                            
-                            <p><label for="comments">What do you think?</label></p>
-                            <textarea id="user_comment" name="user_comment" rows="3" cols="35">Leave a comment...</textarea>
-                            <br>
-                            <button>Submit</button>
-                        </form>
-
-                        <% user_comments.each do |comments| %>
-                            <% if tv_show['id'] == comments['tvseries_id'] %>
-                                <h5><%= comments['user_name'] %>: <%= comments['comment'] %></h5><h6>(<%= comments['date_commented'] %>)</h6>
-                            <% end %>
-                        <% end %>
-
-                    <% end %>
-
-                </article>
+                    </article>
+                </div>
+            </div>
             <% end %>
 
         </section>
 
     <% else %>
-        <h1 class="login-page">THIS IS THE GOOD SHYTE</h1>
-        <a href="/sign_up">Sign up</a>
-        <a href="/login">Login</a>
+
+        <body class="login-page">
+            <%# <h1 class="login-heading">GOOD SHYTE</h1> %>
+
+            <section class="login-portal">
+                <h2 class="login-message">Login</h2>
+
+                <form action="/sessions" method="POST">
+                    <label for="">Email </label><br>
+                    <input type="text" class="login-input" name='email' placeholder="Enter your email"><br>
+
+                    <label for="">Password </label><br>
+                    <input type="password" name='password' class="login-input" placeholder="Enter your password"><br>
+
+                    <button class="login-button">Login</button>
+                </form>
+                <a href="/sign_up" class="sign-up">SIGN UP</a>
+                <%# <a href="/login">Login</a> %>
+            </section>
+        </body>
     <% end %>
 
     </main>
