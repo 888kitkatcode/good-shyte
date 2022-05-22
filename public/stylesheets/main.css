@@ -1,8 +1,13 @@
 body {
-    background: #FFF;
+    background: lavender;
     display: grid;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Poppins', sans-serif;
+}
+
+.search-results {
+    justify-content: center;
+    justify-items: center;
 }
 
 .logout {
@@ -19,6 +24,16 @@ nav {
     position: fixed;
     font-weight: bolder;
     width: 100%;
+}
+
+.new-recc {
+    height: 110px;
+    align-items: center;
+}
+
+#search-nav {
+    height: 100px;
+    align-items: center;
 }
 
 .home {
@@ -62,7 +77,10 @@ nav {
 .all-tv-recommendations{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 3fr));
-    height: 1000px;
+    padding: 0px 100px 100px 100px;
+}
+
+.new-recommendations {
     padding: 40px 100px 100px 100px;
 }
 
@@ -74,21 +92,44 @@ div {
     border: double #c9b6f6;
     border-radius: 60px;
     border-width: 30px;
-    margin: 60px;
+    margin: 60px 60px 30px 60px;
     padding: 20px;
-    overflow: hidden;
+    background: #FFF;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 350px;
+    text-align: center;
 }
-  
+
+#new-recc-box {
+    margin-top: 150px;
+    max-width: 700px;
+    max-height: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+    border-width: 50px;
+    overflow-x: none;
+    overflow-y: none;
+    color: gray;
+}
+
+.date_posted {
+    font-size: 12px;
+}
+
 div img {
     max-width: 100%;
-    height: auto;
+    max-height: 300px;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .user-comments {
     padding:4px;
     height: 110px;
-    background-color:#FFDDCC;
+    background-color:#fdf2ec;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -104,6 +145,27 @@ div img {
 #user_comment {
     width: 100%;
     height: 50px;
+}
+
+#search-result-list {
+    margin-top: 200px;
+}
+
+#search-result-list {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    list-style-type: none;
+}
+
+li {
+    list-style-type: none;
+    margin: 20px;
+    text-align: center;
+}
+
+#API-movie-link {
+    text-decoration: none;
+    color: rebeccapurple;
 }
 
 /* Login */
@@ -151,6 +213,38 @@ div img {
     margin-bottom: 30px;
 }
 
+#new-recc-input {
+    width: 350px;
+    height: 30px;
+    background: #e6e6fa7a;
+    color: gray;
+    font-size: 15px;
+    text-align: center;
+}
+
+#search-input {
+    width: 290px;
+    height: 30px;
+    background: #e6e6fa2b;
+    margin-top: 50px;
+    margin-bottom: 0;
+    color: darkgray;
+    text-align: center;
+    border-bottom: none;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+#finish-recc-input {
+    width: 350px;
+    height: 30px;
+    background: #e6e6fa7a;
+    color: gray;
+    font-size: 15px;
+    text-align: center;
+    border: none;
+}
+
 .login-button {
     font-size: 20px;
     padding: 5px 40px;
@@ -161,6 +255,19 @@ div img {
     border: dashed;
     margin-left: 14px;
     margin-top: 15px;
+    opacity: 0.88;
+}
+
+#add-recommendation-button {
+    border-radius: 100px;
+    border: double;
+}
+
+#search-button {
+    font-size: 15px;
+    border: none;
+    padding: 5px;
+    color: #6347a4;
     opacity: 0.88;
 }
 

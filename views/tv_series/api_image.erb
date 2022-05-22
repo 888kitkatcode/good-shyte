@@ -1,20 +1,26 @@
-<h1>Finish your recommendation!</h1>
+<nav class="new-recc">
+    <h1>Finish your recommendation!</h1>
+</nav>
 
-<h3><%= movie_title %></h3>
-<img src="<%= selected_image %>" alt="">
+<div class="new-recommendations">
+    <div class="recco-box" id="new-recc-box">
+        <h3><%= movie_title %></h3>
+        <img src="<%= selected_image %>" alt=""><br>
 
-<form action="/recommend_tv_show" method="POST">
-    
-    <input type="hidden" name="name" value="<%= movie_title %>">
+        <form action="/recommend_tv_show" method="POST">
+            
+            <input type="hidden" name="name" value="<%= movie_title %>">
 
-    <input type="hidden" name="image_url" value="<%= selected_image %>">
+            <input type="hidden" name="image_url" value="<%= selected_image %>">
 
-    <label for="">Why are you backing it? </label>
-    <input type="text" name="description">
+            <label for="">Why are you backing it? </label><br>
+            <input type="text" name="description" id="finish-recc-input"><br>
 
-    <label for="">Where to watch: </label>
-    <input type="text" name="where_to_watch">
+            <label for="">Where to watch: </label><br>
+            <input type="text" name="where_to_watch" id="finish-recc-input"><br>
 
-    <button>Add recommendation</button>
+            <button class="login-button" id="add-recommendation-button">SHARE</button>
 
-</form>
+        </form>
+    </div>
+</div>

@@ -27,7 +27,7 @@
             <div>
                 <div class="recco-box">
                     <article class="tv-item">
-                    <%= tv_show['date_posted'] %>
+                    <h6 class="date_posted"><%= tv_show['date_posted'] %></h6> 
                     <h3><%= tv_show['user_name']%> recommends:</h3> 
                     <h2><%= tv_show['name'] %></h2>
                         
@@ -46,7 +46,7 @@
                             <h3>Where can you watch it?</h3>
                             <h5><%= tv_show['where_to_watch'] %></h5>
 
-                            <h3>Ok, let's discuss</h3>
+                            <h3>Ok, let's discuss...</h3>
                             <div class="user-comments">
                                 <% user_comments.each do |comments| %>
                                     <% if tv_show['id'] == comments['tvseries_id'] %>
@@ -74,7 +74,7 @@
                             <h3>Where can you watch it?</h3>
                             <h5><%= tv_show['where_to_watch'] %></h5>
                             
-                            <h3>Ok, let's discuss</h3>
+                            <h3>Ok, let's discuss...</h3>
                             <div class="user-comments">
                                 <% user_comments.each do |comments| %>
                                     <% if tv_show['id'] == comments['tvseries_id'] %>

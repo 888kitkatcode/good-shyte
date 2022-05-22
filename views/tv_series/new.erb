@@ -1,22 +1,29 @@
-<h1>What should I be watching?</h1>
-<form action="/recommend_tv_show" method="POST">
-    <label for="">Name: </label>
-    <input type="text" name ="name">
+<nav class="new-recc">
+    <h1>What should your followers be watching?</h1>
+</nav>
 
-    <label for="">Insert your own image</label>
-    <input type="text" name="image_url">
+<div class="new-recommendations">
+    <div class="recco-box" id="new-recc-box">
+        <form action="/recommend_tv_show" method="POST">
+            <label for="">Name </label><br>
+            <input type="text" name ="name" class="login-input" id="new-recc-input"><br>
 
-    <label for="">Why are you backing it? </label>
-    <input type="text" name="description">
+            <label for="">Insert your own image (or search for one below)</label><br>
+            <input type="text" name="image_url" class="login-input" id="new-recc-input"><br>
 
-    <label for="">Where to watch: </label>
-    <input type="text" name="where_to_watch">
+            <label for="">Why are you backing it? </label><br>
+            <input type="text" name="description" class="login-input" id="new-recc-input"><br>
 
-    <button>Add recommendation</button>
-</form>
+            <label for="">Where to watch </label><br>
+            <input type="text" name="where_to_watch" class="login-input" id="new-recc-input"><br>
 
-<label for="">Search for an image here</label>
-<form action="/search_results">
-    <input type="text" name ="search_input">
-    <button>Search for an image</button>
-</form>
+            <button class="login-button" id="add-recommendation-button">SHARE</button><br>
+
+        </form>
+            <form action="/search_results">
+                <input type="text" name ="search_input" class="login-input" id="search-input" placeholder="Search for an image here">
+                <button id="search-button">Search</button>
+            </form>
+    </div>
+
+</div>

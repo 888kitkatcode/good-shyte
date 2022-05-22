@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search results</title>
 </head>
-<body>
-    <h1>Search results:</h1>
-    <h2>Click on an image to select</h2>
-
-    <% movie_info.each do |movie_hash| %>
-    <li>
-        <a href="/new/api_image?movie_title=<%= movie_hash['Title']%>">
-            <%= movie_hash['Title']%>
-            <img src="<%= movie_hash['Poster']%>" alt="">
-        </a>
-    </li>
-
-    <% end %>
-
+<body class="search-results">
+    <nav id="search-nav"><h1>Found what you want? Click on an image to select</h1></nav>
+    <div id="search-result-list-container">
+        <div id="search-result-list">
+            <% movie_info.each do |movie_hash| %>
+            <li>
+                <a href="/new/api_image?movie_title=<%= movie_hash['Title']%>" id="API-movie-link">
+                    <%= movie_hash['Title']%><img src="<%= movie_hash['Poster']%>" alt="">
+                </a>
+            </li>
+            <% end %>
+        </div>
+    </div>
 </body>
 </html>
