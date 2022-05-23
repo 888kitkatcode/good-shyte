@@ -31,7 +31,7 @@ Starting functionality will include:
 ### Future features:
 These are ideas for features that I will add in order of priority in future.
 1. Limit recommendations on the homepage to only those from within their chosen network (i.e. who they follow)
-2. Change format of how date stamps appear. Fix bug in Heroku (time-stamp only shows up in AEST in local - records UTC in Heroku).
+2. Change format of how date stamps appear. Fix bug in Heroku (time-stamp only shows up in AEST in local - records UTC in Heroku). Try STRF time for date and time of comments.
 3. If an API cannot find an image, keep the user on the new recommendation route and display message that no images can be found.
 4. Each section of the recommendation form must be filled before the recommendation can be submitted.
 5. Include dropdown menu for logout button in nav bar.
@@ -52,3 +52,4 @@ These are ideas for features that I will add in order of priority in future.
 14. Allow users to only add one recommendation per day or per week - TBC. Or one of each type of recommendation per week.
 15. Users can view a page containing their own recommendations only (for ease of editing and deleting).
 16. Allow users to reply to specific comments.
+17. Tidy-up CSS including responsiveness.
